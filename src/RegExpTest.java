@@ -13,6 +13,12 @@ public class RegExpTest {
     @DataProvider(name = "text")
     public static Object[][] text() {
         return new Object[][]{
+                {"265.249.255.255", ""},
+                {"269.249.255.255", ""},
+                {"289.249.255.255", ""},
+                {"300.249.255.255", ""},
+                {"256.249.255.255", ""},
+                {"278.249.255.255", ""},
                 {"8.8.8.8", "8.8.8.8"},
                 {"http://192.168.1.1/index.html", "192.168.1.1"},
                 {"This text contains a valid IP address 254.254.254.254, find it!", "254.254.254.254"},
@@ -23,7 +29,7 @@ public class RegExpTest {
                 {"valid IP: 255.255.255.255!", "255.255.255.255"},
                 {"invalid:255.255.255.255", "255.255.255.255"},
                 {"This text should contain a valid IP 192.168.0.0", "192.168.0.0"},
-                {"This text should contain an invalid IP https://192222.1680.0.0", ""}
+                {"This text should contain an invalid IP https://192222.1680.0.0", ""},
         };
     }
 

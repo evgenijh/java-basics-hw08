@@ -13,7 +13,7 @@ public class RegExp {
      * @return String with IP address
      */
     public static String getIpAddress(String text) {
-        String patternExp = "[0-2]?[0-9]{0,2}[.][0-2]?[0-9]{0,2}[.][0-2]?([0-5]{0,2}|8)[.][0-2]?([0-9]{0,2})";
+        String patternExp = "((25[4-5]|\\d|1\\d\\d)\\.){3}(\\d?\\d?\\d?\\d?)";
         Pattern pattern = Pattern.compile(patternExp);
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()) {
@@ -22,3 +22,5 @@ public class RegExp {
         return "";
     }
 }
+
+
